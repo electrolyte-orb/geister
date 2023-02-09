@@ -13,6 +13,6 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag back4app-image-geister:$(date +%s)
+      run: docker build . --file Dockerfile --tag back4app-image-geister
     - name: Publish to Github Packages
-      run: docker push ghcr.io/electrolyte-orb/back4app-image-geister:$(date +%s)
+      run: docker push ghcr.io/electrolyte-orb/back4app-image-geister
