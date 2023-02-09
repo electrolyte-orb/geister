@@ -1,16 +1,20 @@
-FROM node:hydrogen-alpine
+FROM node:hydrogen-alpine AS base
 
-WORKDIR /usr/src/app
-
-COPY package.json ./
-COPY yarn.lock ./
-
+FROM base AS builder
+WORKDIR /app
+COPY package.json yarn.lock ./
 RUN yarn install --frozen-lockfile && yarn cache clean
-
 COPY . .
-
 RUN yarn build
+
+
+FROM base AS runner
+WORKDIR /app
+COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
+COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
+
+USER nextjs
 
 EXPOSE 3000
 
-CMD ["yarn", "start"]
+CMD ["node", "server.js"]
