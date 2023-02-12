@@ -1,7 +1,0 @@
-FROM docker:dind
-
-RUN docker pull ghcr.io/electrolyte-orb/back4app-image-geister
-RUN docker pull mongo:latest
-RUN docker run -d -p 3000:3000 ghcr.io/electrolyte-orb/back4app-image-geister
-
-CMD [ "docker", "run -d -p 27017:8080 monogo"]
