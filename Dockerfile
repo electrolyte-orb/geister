@@ -1,11 +1,8 @@
-FROM ubuntu:20.04
+FROM docker
 
 WORKDIR /app
 
 COPY ./docker-compose.yml .
 COPY ./run.sh .
 
-RUN apt-get update \
-   && apt-get upgrade -y \
-   && apt-get install -y docker.io 
-CMD [ "sh", "run.sh"]
+CMD [ "/bin/sh", "run.sh"]

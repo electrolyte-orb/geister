@@ -1,3 +1,2 @@
 docker pull mongo
-
-echo "hello"
+docker run -d mongo
