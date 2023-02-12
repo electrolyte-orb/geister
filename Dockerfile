@@ -1,3 +1,3 @@
 FROM mongo:latest
-
+HEALTHCHECK NONE
 EXPOSE 27017
