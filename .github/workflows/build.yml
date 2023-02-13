@@ -24,7 +24,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Build the Docker image
-        run: mv ./docker/mongo.dockerfile ./Dockerfile |
+        run: cp ./docker/mongo.dockerfile ./Dockerfile |
           docker build . --file Dockerfile --tag ghcr.io/electrolyte-orb/microg-db:latest
       - name: Log in to registry
         run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u $ --password-stdin
