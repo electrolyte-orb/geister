@@ -1,7 +1,7 @@
 FROM mongo:latest
 
-WORKDIR /database
-COPY mongod.yaml /database/
+WORKDIR /app
+COPY mongod.yaml /app/
 EXPOSE 27017
 
 CMD ["mongod", "--config", "/database/mongod.yaml"]
