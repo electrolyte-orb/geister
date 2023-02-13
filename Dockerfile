@@ -1,6 +1,7 @@
 FROM mongo:latest
 
-HEALTHCHECK --interval=10s --timeout=10s --start-period=30s --retries=3 CMD [ "mongosh", "--version" ]
-
+WORKDIR /database
+COPY ./mongod.yaml /database/
 EXPOSE 27017
 
+CMD ["mongod", "--config", "/database/mongod.yaml"]
