@@ -1,5 +1,6 @@
 FROM mongo:latest
 
-HEALTHCHECK --interval=30s --timeout=30s --start-period=5s --retries=3 CMD [ "mongo", "--version" ]
+HEALTHCHECK --interval=10s --timeout=10s --start-period=30s --retries=3 CMD [ "mongosh", "--version" ]
 
 EXPOSE 27017
+
