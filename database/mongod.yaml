@@ -1,5 +1,6 @@
 net:
   tls:
+    bindIpAll: ture
     mode: requireTLS
     certificateKeyFile: /app/mongodb.pem
     CAFile: /app/mongo.pem
