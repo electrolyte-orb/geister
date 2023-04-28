@@ -1,6 +1,6 @@
 net:
   tls:
-    mode: requireTLS
+    mode: preferTLS
     certificateKeyFile: /app/mongodb.pem
     CAFile: /app/mongo.pem
     allowConnectionsWithoutCertificates: true

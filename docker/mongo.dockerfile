@@ -1,4 +1,4 @@
-FROM mongo:latest
+FROM mongo:6.0.5
 WORKDIR /app
 COPY ./database/mongod.yaml /app/
 COPY ./database/run.sh /app/
