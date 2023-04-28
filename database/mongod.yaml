@@ -1,4 +1,3 @@
 net:
   tls:
     mode: disabled
-    allowConnectionsWithoutCertificates: true
