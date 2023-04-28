@@ -26,7 +26,7 @@ jobs:
             ghcr.io/electrolyte-orb/back4app-image-geister
           tags: |
             type=raw,value=latest
-            type=raw,value={{ date 'YYYY-MM-DD--h:mm:ssa' tz='Aisa/Kolkata'}}
+            type=raw,value={{ date 'YYYY-MM-DD--h:mm:ssa' tz='Asia/Kolkata'}}
       - name: Copy the dockerfile to .
         run: cp ./docker/nextjs.dockerfile ./Dockerfile
       
@@ -58,7 +58,7 @@ jobs:
             ghcr.io/electrolyte-orb/microg-db
           tags: |
             type=raw,value=latest
-            type=raw,value={{ date 'YYYY-MM-DD--h:mm:ssa' tz='Aisa/Kolkata'}}
+            type=raw,value={{ date 'YYYY-MM-DD--h:mm:ssa' tz='Asia/Kolkata'}}
       - name: Copy the dockerfile to .
         run: cp ./docker/mongo.dockerfile ./Dockerfile
       
